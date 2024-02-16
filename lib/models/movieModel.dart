@@ -16,7 +16,7 @@ class Movie {
 
   Movie.fromJson(Map<String, dynamic> json) {
     if (json['results'] != null) {
-      results = new List<Results>();
+      results =  <Results>[];
       json['results'].forEach((v) {
         results.add(new Results.fromJson(v));
       });

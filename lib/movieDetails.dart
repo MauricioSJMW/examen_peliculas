@@ -25,7 +25,7 @@ class _MovieDetails extends State<MovieDetail> {
   late MovieDetailModel movieDetails;
   late MovieCredits movieCredits;
 
-  List<CastCrew> castCrew = new List<CastCrew>();
+  List<CastCrew> castCrew =  <CastCrew>[];
   late bool isLoading;
 
   @override
@@ -111,7 +111,6 @@ class _MovieDetails extends State<MovieDetail> {
                                   children: <Widget>[
                                     CircleAvatar(
                                         radius: 28.0,
-                                        // ignore: unnecessary_null_comparison
                                         backgroundImage:c.imagePath != null
                                             ? NetworkImage(
                                                 "${Tmdb.baseImageUrl}w154${c.imagePath}",
@@ -181,11 +180,12 @@ class _MovieDetails extends State<MovieDetail> {
           Text(
               "Release Date: ${DateFormat('dd-MM-yyyy').format(DateTime.parse(widget.movie.releaseDate))}",
               style: TextStyle(fontSize: 11.0)),
-          RaisedButton(
-            shape: StadiumBorder(),
-            elevation: 15.0,
-            color: Colors.red[700],
-            child: Text('Tickets'),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom( shape: StadiumBorder(), padding: const EdgeInsets.all(12.0),
+  primary: Colors.blue,),
+           
+           
+             child: Text('Tickets'),
             onPressed: () {},
           ),
         ]);
