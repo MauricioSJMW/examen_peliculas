@@ -1,9 +1,11 @@
+// ignore_for_file: unnecessary_new
+
 class Movie {
-  List<Results> results;
-  int page;
-  int totalResults;
-  Dates dates;
-  int totalPages;
+ late List<Results> results;
+ late int page;
+ late int totalResults;
+ late Dates dates;
+ late int totalPages;
 
   Movie(
       {required this.results,
@@ -41,21 +43,21 @@ class Movie {
 }
 
 class Results {
-  int voteCount;
-  int id;
-  bool video;
-  double voteAverage;
-  String title;
-  double popularity;
-  String posterPath;
-  String originalLanguage;
-  String originalTitle;
-  List<int> genreIds;
-  String backdropPath;
-  bool adult;
-  String overview;
-  String releaseDate;
-  int heroTag;
+  late int voteCount;
+  late int id;
+ late  bool video;
+  late double voteAverage;
+  late String title;
+  late double popularity;
+  late String posterPath;
+  late String originalLanguage;
+  late String originalTitle;
+  late List<int> genreIds;
+  late String backdropPath;
+ late  bool adult;
+ late  String overview;
+  late String releaseDate;
+  late int heroTag;
 
   Results(
       {required this.voteCount,
@@ -111,8 +113,8 @@ class Results {
 }
 
 class Dates {
-  String maximum;
-  String minimum;
+ late  String maximum;
+ late String minimum;
 
   Dates({required this.maximum, required this.minimum});
 

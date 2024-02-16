@@ -112,7 +112,7 @@ class _MovieDetails extends State<MovieDetail> {
                                     CircleAvatar(
                                         radius: 28.0,
                                         // ignore: unnecessary_null_comparison
-                                        backgroundImage: c.imagePath != null
+                                        backgroundImage:c.imagePath != null
                                             ? NetworkImage(
                                                 "${Tmdb.baseImageUrl}w154${c.imagePath}",
                                               )

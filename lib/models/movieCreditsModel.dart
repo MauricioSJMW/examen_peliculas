@@ -1,7 +1,7 @@
 class MovieCredits {
-  int id;
-  List<Cast> cast;
-  List<Crew> crew;
+  late int id;
+  late List<Cast> cast;
+  late List<Crew> crew;
 
   MovieCredits({required this.id, required this.cast, required this.crew});
 
@@ -35,14 +35,14 @@ class MovieCredits {
 }
 
 class Cast {
-  int castId;
-  String character;
-  String creditId;
-  int gender;
-  int id;
-  String name;
-  int order;
-  String profilePath;
+  late int castId;
+  late String character;
+  late String creditId;
+  late int gender;
+  late int id;
+  late String name;
+  late int order;
+  late String profilePath;
 
   Cast(
       {required this.castId,
@@ -80,13 +80,13 @@ class Cast {
 }
 
 class Crew {
-  String creditId;
-  String department;
-  int gender;
-  int id;
-  String job;
-  String name;
-  String profilePath;
+  late String creditId;
+  late String department;
+  late int gender;
+  late int id;
+  late String job;
+  late String name;
+  late String profilePath;
 
   Crew(
       {required this.creditId,

@@ -1,29 +1,29 @@
 class MovieDetailModel {
-  bool adult;
-  String backdropPath;
-  Null belongsToCollection;
-  int budget;
-  List<Genres> genres;
-  String homepage;
-  int id;
-  String imdbId;
-  String originalLanguage;
-  String originalTitle;
-  String overview;
-  double popularity;
-  String posterPath;
-  List<ProductionCompanies> productionCompanies;
-  List<ProductionCountries> productionCountries;
-  String releaseDate;
-  int revenue;
-  int runtime;
-  List<SpokenLanguages> spokenLanguages;
-  String status;
-  String tagline;
-  String title;
-  bool video;
-  double voteAverage;
-  int voteCount;
+ late  bool adult;
+  late String backdropPath;
+  late Null belongsToCollection;
+  late int budget;
+  late List<Genres> genres;
+ late  String homepage;
+  late int id;
+  late String imdbId;
+  late String originalLanguage;
+  late String originalTitle;
+  late String overview;
+  late double popularity;
+  late String posterPath;
+  late List<ProductionCompanies> productionCompanies;
+ late  List<ProductionCountries> productionCountries;
+ late  String releaseDate;
+  late int revenue;
+  late int runtime;
+  late List<SpokenLanguages> spokenLanguages;
+  late String status;
+  late String tagline;
+  late String title;
+  late bool video;
+ late  double voteAverage;
+  late int voteCount;
 
   MovieDetailModel(
       {required this.adult,
@@ -143,11 +143,10 @@ class MovieDetailModel {
 }
 
 class Genres {
-  int id;
-  String name;
+  late int id;
+  late String name;
 
   Genres({required this.id, required this.name});
-
   Genres.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
@@ -162,10 +161,10 @@ class Genres {
 }
 
 class ProductionCompanies {
-  int id;
-  String logoPath;
-  String name;
-  String originCountry;
+ late int id;
+ late  String logoPath;
+ late  String name;
+  late String originCountry;
 
   ProductionCompanies({required this.id, required this.logoPath, required this.name, required this.originCountry});
 
@@ -187,8 +186,8 @@ class ProductionCompanies {
 }
 
 class ProductionCountries {
-  String iso31661;
-  String name;
+  late String iso31661;
+  late String name;
 
   ProductionCountries({required this.iso31661, required this.name});
 
@@ -206,8 +205,8 @@ class ProductionCountries {
 }
 
 class SpokenLanguages {
-  String iso6391;
-  String name;
+ late String iso6391;
+  late String name;
  SpokenLanguages.fromJson(Map<String, dynamic> json) {
     iso6391 = json['iso_639_1'];
     name = json['name'];
