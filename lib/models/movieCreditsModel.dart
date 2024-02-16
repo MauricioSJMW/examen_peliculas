@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 class MovieCredits {
   late int id;
   late List<Cast> cast;
@@ -10,25 +12,25 @@ class MovieCredits {
     if (json['cast'] != null) {
       cast = <Cast>[];
       json['cast'].forEach((v) {
-        cast.add(new Cast.fromJson(v));
+        cast.add( Cast.fromJson(v));
       });
     }
     if (json['crew'] != null) {
       crew = <Crew>[];
       json['crew'].forEach((v) {
-        crew.add(new Crew.fromJson(v));
+        crew.add( Crew.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    if (this.cast != null) {
-      data['cast'] = this.cast.map((v) => v.toJson()).toList();
+    data['id'] = id;
+    if (cast != null) {
+      data['cast'] = cast.map((v) => v.toJson()).toList();
     }
-    if (this.crew != null) {
-      data['crew'] = this.crew.map((v) => v.toJson()).toList();
+    if (crew != null) {
+      data['crew'] = crew.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -67,14 +69,14 @@ class Cast {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['cast_id'] = this.castId;
-    data['character'] = this.character;
-    data['credit_id'] = this.creditId;
-    data['gender'] = this.gender;
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['order'] = this.order;
-    data['profile_path'] = this.profilePath;
+    data['cast_id'] = castId;
+    data['character'] = character;
+    data['credit_id'] = creditId;
+    data['gender'] = gender;
+    data['id'] = id;
+    data['name'] = name;
+    data['order'] = order;
+    data['profile_path'] = profilePath;
     return data;
   }
 }
@@ -109,13 +111,13 @@ class Crew {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['credit_id'] = this.creditId;
-    data['department'] = this.department;
-    data['gender'] = this.gender;
-    data['id'] = this.id;
-    data['job'] = this.job;
-    data['name'] = this.name;
-    data['profile_path'] = this.profilePath;
+    data['credit_id'] = creditId;
+    data['department'] = department;
+    data['gender'] = gender;
+    data['id'] = id;
+    data['job'] = job;
+    data['name'] = name;
+    data['profile_path'] = profilePath;
     return data;
   }
 }

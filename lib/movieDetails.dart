@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_new
+// ignore_for_file: unnecessary_new, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -81,7 +81,7 @@ class _MovieDetails extends State<MovieDetail> {
 
   Widget _buildCastCrewContent(String personType) => Container(
         height: 115.0,
-        padding: EdgeInsets.only(top: 8.0),
+        padding: const EdgeInsets.only(top: 8.0),
         decoration: BoxDecoration(
           color: Colors.black.withOpacity(0.1),
         ),
@@ -100,11 +100,11 @@ class _MovieDetails extends State<MovieDetail> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: isLoading
-                    ? <Widget>[Center(child: CircularProgressIndicator())]
+                    ? <Widget>[const Center(child: CircularProgressIndicator())]
                     : castCrew
                         .where((f) => f.personType == personType)
                         .map((c) => Padding(
-                              padding: EdgeInsets.only(left: 4.0),
+                              padding: const EdgeInsets.only(left: 4.0),
                               child: Container(
                                 width: 65.0,
                                 child: Column(
@@ -115,12 +115,12 @@ class _MovieDetails extends State<MovieDetail> {
                                             ? NetworkImage(
                                                 "${Tmdb.baseImageUrl}w154${c.imagePath}",
                                               )
-                                            : const AssetImage('assets/nobody.jpg')),
+                                            : const AssetImage('assets/nobody.png') as ImageProvider),
                                     Padding(
                                       padding: const EdgeInsets.only(top: 4.0),
                                       child: Text(
                                         c.name,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 8.0,
                                             fontWeight: FontWeight.bold),
                                         overflow: TextOverflow.ellipsis,
@@ -128,7 +128,7 @@ class _MovieDetails extends State<MovieDetail> {
                                     ),
                                     Text(
                                       c.subName,
-                                      style: TextStyle(fontSize: 8.0),
+                                      style: const TextStyle(fontSize: 8.0),
                                       overflow: TextOverflow.ellipsis,
                                     ),
                                   ],
@@ -146,7 +146,7 @@ class _MovieDetails extends State<MovieDetail> {
   Widget build(BuildContext context) {
     final moviePoster = Container(
         height: 350.0,
-        padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: Center(
             child: Card(
                 elevation: 15.0,
@@ -162,7 +162,7 @@ class _MovieDetails extends State<MovieDetail> {
       child: Center(
         child: Text(
           widget.movie.title,
-          style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
           overflow: TextOverflow.ellipsis,
         ),
       ),
@@ -175,17 +175,17 @@ class _MovieDetails extends State<MovieDetail> {
               movieDetails != null
                   ? _getMovieDuration(movieDetails.runtime)
                   : '',
-              style: TextStyle(fontSize: 11.0)),
+              style: const TextStyle(fontSize: 11.0)),
           Container(height: 20.0, width: 1.0, color: Colors.white70),
           Text(
               "Release Date: ${DateFormat('dd-MM-yyyy').format(DateTime.parse(widget.movie.releaseDate))}",
-              style: TextStyle(fontSize: 11.0)),
+              style: const TextStyle(fontSize: 11.0)),
           ElevatedButton(
-            style: ElevatedButton.styleFrom( shape: StadiumBorder(), padding: const EdgeInsets.all(12.0),
+            style: ElevatedButton.styleFrom( shape: const StadiumBorder(), padding: const EdgeInsets.all(12.0),
   primary: Colors.blue,),
            
            
-             child: Text('Tickets'),
+             child: const Text('Tickets'),
             onPressed: () {},
           ),
         ]);
@@ -203,7 +203,7 @@ class _MovieDetails extends State<MovieDetail> {
                         padding: const EdgeInsets.only(right: 6.0),
                         child: FilterChip(
                           backgroundColor: Colors.grey[600],
-                          labelStyle: TextStyle(fontSize: 10.0),
+                          labelStyle: const TextStyle(fontSize: 10.0),
                           label: Padding(
                             padding: const EdgeInsets.only(bottom: 8.0),
                             child: Text(g.name),
@@ -217,19 +217,19 @@ class _MovieDetails extends State<MovieDetail> {
     );
 
     final middleContent = Container(
-        padding: EdgeInsets.only(left: 8.0, right: 8.0, top: 2.0),
+        padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 2.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Divider(),
+            const Divider(),
             genresList,
-            Divider(),
+            const Divider(),
             Text(
               'SYNOPSIS',
               style: TextStyle(
                   fontWeight: FontWeight.bold, color: Colors.grey[300]),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
             Padding(
@@ -240,7 +240,7 @@ class _MovieDetails extends State<MovieDetail> {
                     color: Colors.grey[300],
                   )),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
           ],
@@ -250,7 +250,7 @@ class _MovieDetails extends State<MovieDetail> {
       appBar: AppBar(
         elevation: 0.0,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Movies App',
           style: TextStyle(
               color: Colors.white, fontSize: 14.0, fontWeight: FontWeight.bold),

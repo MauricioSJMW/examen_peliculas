@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -16,7 +18,7 @@ void main() => runApp(MaterialApp(
 
 class MyMovieApp extends StatefulWidget {
   @override
-  _MyMovieApp createState() => new _MyMovieApp();
+  _MyMovieApp createState() => _MyMovieApp();
 }
 
 class _MyMovieApp extends State<MyMovieApp> {
@@ -70,7 +72,7 @@ class _MyMovieApp extends State<MyMovieApp> {
 
   Widget _buildCarouselSlider() => CarouselSlider(
         items: nowPlayingMovies == null
-            ? <Widget>[Center(child: CircularProgressIndicator())]
+            ? <Widget>[const Center(child: CircularProgressIndicator())]
             : nowPlayingMovies.results
                 .map((movieItem) => _buildMovieItem(movieItem))
                 .toList(),
@@ -102,21 +104,21 @@ class _MyMovieApp extends State<MyMovieApp> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
-                    padding: EdgeInsets.all(6.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: _buildMovieItem(movieItem)),
                 Padding(
-                    padding: EdgeInsets.only(left: 6.0, top: 2.0),
+                    padding: const EdgeInsets.only(left: 6.0, top: 2.0),
                     child: Text(
                       movieItem.title,
-                      style: TextStyle(fontSize: 8.0),
+                      style: const TextStyle(fontSize: 8.0),
                       overflow: TextOverflow.ellipsis,
                     )),
                 Padding(
-                  padding: EdgeInsets.only(left: 6.0, top: 2.0),
+                  padding: const EdgeInsets.only(left: 6.0, top: 2.0),
                   child: Text(
                       DateFormat('yyyy')
                           .format(DateTime.parse(movieItem.releaseDate)),
-                      style: TextStyle(fontSize: 8.0)),
+                      style: const TextStyle(fontSize: 8.0)),
                 ),
               ],
             )),
@@ -124,7 +126,7 @@ class _MyMovieApp extends State<MyMovieApp> {
 
   Widget _buildMoviesListView(Movie movie, String movieListTitle) => Container(
         height: 258.0,
-        padding: EdgeInsets.only(top: 10.0, bottom: 10.00),
+        padding: const EdgeInsets.only(top: 10.0, bottom: 10.00),
         decoration: BoxDecoration(
           color: Colors.black.withOpacity(0.4),
         ),
@@ -132,7 +134,7 @@ class _MyMovieApp extends State<MyMovieApp> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(left: 7.0, bottom: 7.0),
+              padding: const EdgeInsets.only(left: 7.0, bottom: 7.0),
               child: Text(
                 movieListTitle,
                 style: TextStyle(
@@ -145,10 +147,10 @@ class _MyMovieApp extends State<MyMovieApp> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: movie == null
-                    ? <Widget>[Center(child: CircularProgressIndicator())]
+                    ? <Widget>[const Center(child: CircularProgressIndicator())]
                     : movie.results
                         .map((movieItem) => Padding(
-                              padding: EdgeInsets.only(left: 6.0, right: 2.0),
+                              padding: const EdgeInsets.only(left: 6.0, right: 2.0),
                               child: _buildMovieListItem(movieItem),
                             ))
                         .toList(),
@@ -163,16 +165,16 @@ class _MyMovieApp extends State<MyMovieApp> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        title: Text(
+        title: const Text(
           'Movie App',
           style: TextStyle(
               color: Colors.white, fontSize: 14.0, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+        leading: IconButton(icon: const Icon(Icons.menu), onPressed: () {}),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () {},
           )
         ],
